@@ -1,0 +1,6 @@
+Interface\PersonaI.class
+Controller\PersonaC.class
+Dao\Conexion.class
+Controller\PersonaReport.class
+Dao\ImplPersonaD.class
+Model\PersonaM.class
