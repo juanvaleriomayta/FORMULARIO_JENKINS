@@ -50,10 +50,16 @@
             <version>4.0.0</version>
         </dependency>
         <!--https://mvnrepository.com/artifact/com.github.noraui/ojdbc7--> 
-                <dependency>
+        <dependency>
             <groupId>com.github.noraui</groupId>
             <artifactId>ojdbc7</artifactId>
             <version>12.1.0.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.wildfly.core/wildfly-server -->
+        <dependency>
+            <groupId>org.wildfly.core</groupId>
+            <artifactId>wildfly-server</artifactId>
+            <version>10.0.0.Final</version>
         </dependency>
 
         <dependency>
@@ -111,13 +117,13 @@
                 </configuration>
             </plugin>
             <plugin>
-            <groupId>org.wildfly.plugins</groupId>
-            <artifactId>wildfly-maven-plugin</artifactId>
-            <version>1.0.2.Final</version>
-            <configuration>
-                <skip>true</skip>
-            </configuration>
-        </plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>1.0.2.Final</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
