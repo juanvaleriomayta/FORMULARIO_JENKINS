@@ -14,8 +14,8 @@ public class ImplPersonaD extends Conexion implements PersonaI {
     public void registrarPersona(PersonaM per) throws Exception {
         try {
             Conectar();
-//            String sql = "INSERT INTO PERSONA (DNIPER,NOMAPEPER,EMAPER,FECNACPER) VALUES (?,?,?,STR_TO_DATE(?,'%d/%m/%Y'))";
-            String sql = "INSERT INTO PERSONA (DNIPER,NOMAPEPER,EMAPER,FECNACPER) VALUES (?,?,?,TO_DATE(?,'dd/MM/yyyy'))";
+            String sql = "INSERT INTO PERSONA (DNIPER,NOMAPEPER,EMAPER,FECNACPER) VALUES (?,?,?,STR_TO_DATE(?,'%d/%m/%Y'))";
+//            String sql = "INSERT INTO PERSONA (DNIPER,NOMAPEPER,EMAPER,FECNACPER) VALUES (?,?,?,TO_DATE(?,'dd/MM/yyyy'))";
             PreparedStatement ps = this.getCn().prepareStatement(sql);
             ps.setString(1, per.getDNIPER());
             ps.setString(2, per.getNOMAPEPER());
@@ -35,8 +35,8 @@ public class ImplPersonaD extends Conexion implements PersonaI {
         ResultSet rs;
         try {
             Conectar();
-            String sql = "SELECT CODPER,DNIPER,NOMAPEPER,EMAPER,TO_CHAR(FECNACPER,'dd/MM/yyyy') AS FECNACPER FROM PERSONA where regexp_like (EMAPER,'^[a-z0-9._-]+@[a-z0-9.-]+.[a-z]{2,3}$','i')";
-//            String sql = "SELECT CODPER,DNIPER,NOMAPEPER,EMAPER,date_FORMAT(FECNACPER,'%d/%m/%Y') AS FECNACPER FROM PERSONA WHERE EMAPER REGEXP ('^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,6}$')";
+//            String sql = "SELECT CODPER,DNIPER,NOMAPEPER,EMAPER,TO_CHAR(FECNACPER,'dd/MM/yyyy') AS FECNACPER FROM PERSONA where regexp_like (EMAPER,'^[a-z0-9._-]+@[a-z0-9.-]+.[a-z]{2,3}$','i')";
+            String sql = "SELECT CODPER,DNIPER,NOMAPEPER,EMAPER,date_FORMAT(FECNACPER,'%d/%m/%Y') AS FECNACPER FROM PERSONA WHERE EMAPER REGEXP ('^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,6}$')";
             PreparedStatement ps = this.getCn().prepareCall(sql);
             rs = ps.executeQuery();
             lista = new ArrayList<>();
